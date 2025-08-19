@@ -20,6 +20,7 @@ from google.adk.tools.agent_tool import AgentTool
 from . import prompt
 from .sub_agents.academic_newresearch import academic_newresearch_agent
 from .sub_agents.academic_websearch import academic_websearch_agent
+from .sub_agents.weather_agent import weather_agent
 
 MODEL = "gemini-2.5-pro"
 
@@ -31,14 +32,16 @@ academic_coordinator = LlmAgent(
         "analyzing seminal papers provided by the users, "
         "providing research advice, locating current papers "
         "relevant to the seminal paper, generating suggestions "
-        "for new research directions, and accessing web resources "
-        "to acquire knowledge"
+        "for new research directions, accessing web resources "
+        "to acquire knowledge, and providing weather information "
+        "for any location worldwide"
     ),
     instruction=prompt.ACADEMIC_COORDINATOR_PROMPT,
     output_key="seminal_paper",
     tools=[
         AgentTool(agent=academic_websearch_agent),
         AgentTool(agent=academic_newresearch_agent),
+        AgentTool(agent=weather_agent),
     ],
 )
 

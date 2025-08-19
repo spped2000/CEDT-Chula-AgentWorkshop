@@ -12,16 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Academic_newresearch_agent for finding new research lines"""
+"""Weather agent sub-module for providing weather information."""
 
-from google.adk import Agent
+from .agent import weather_agent
 
-from . import prompt
-
-MODEL = "gemini-2.5-flash"
-
-academic_newresearch_agent = Agent(
-    model=MODEL,
-    name="academic_newresearch_agent",
-    instruction=prompt.ACADEMIC_NEWRESEARCH_PROMPT,
-)
+__all__ = ["weather_agent"]

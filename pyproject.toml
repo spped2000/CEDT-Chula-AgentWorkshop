@@ -12,6 +12,7 @@ google-adk = "^1.0.0"
 google-genai = "^1.9.0"
 pydantic = "^2.10.6"
 python-dotenv = "^1.0.1"
+httpx = "^0.28.1"
 google-cloud-aiplatform = { version = "^1.93", extras = [
     "adk",
     "agent-engines",
@@ -41,6 +42,9 @@ absl-py = "^2.2.1"
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+markers = [
+    "asyncio: marks tests as async"
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

@@ -12,16 +12,26 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Academic_newresearch_agent for finding new research lines"""
+"""Weather agent for providing weather information."""
 
 from google.adk import Agent
 
 from . import prompt
+from .tools import get_lat_lng_tool, get_weather_tool
 
 MODEL = "gemini-2.5-flash"
 
-academic_newresearch_agent = Agent(
+weather_agent = Agent(
     model=MODEL,
-    name="academic_newresearch_agent",
-    instruction=prompt.ACADEMIC_NEWRESEARCH_PROMPT,
+    name="weather_agent",
+    description=(
+        "Provides current weather information for any location worldwide. "
+        "Can convert location descriptions to coordinates and retrieve "
+        "comprehensive weather data including temperature, conditions, "
+        "humidity, and wind speed. Supports multiple locations and "
+        "comparative weather analysis."
+    ),
+    instruction=prompt.WEATHER_AGENT_PROMPT,
+    output_key="weather_info",
+    tools=[get_lat_lng_tool, get_weather_tool],
 )
