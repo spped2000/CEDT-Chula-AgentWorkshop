@@ -7,14 +7,13 @@ license = "Apache License 2.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-google-adk = "^1.0.0"
-google-genai = "^1.9.0"
-pydantic = "^2.10.6"
+python = "^3.10"
+google-adk = "^2.1.0"
+google-genai = "^1.72"
+pydantic = "^2.12"
 python-dotenv = "^1.0.1"
 httpx = "^0.28.1"
-google-cloud-aiplatform = { version = "^1.93", extras = [
-    "adk",
+google-cloud-aiplatform = { version = "^1.148.1", extras = [
     "agent-engines",
 ] }
 
@@ -22,9 +21,8 @@ google-cloud-aiplatform = { version = "^1.93", extras = [
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-google-adk = { extras = ["eval"], version = "^1.0.0" }
-google-cloud-aiplatform = { version = "^1.93", extras = [
-    "adk",
+google-adk = { extras = ["eval"], version = "^2.1.0" }
+google-cloud-aiplatform = { version = "^1.148.1", extras = [
     "agent-engines",
     "evaluation",
 ] }

@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables (keep .env.example tracked)
+.env
+
+# ADK runtime
+.adk/
+
+# OS
+.DS_Store
+Thumbs.db
